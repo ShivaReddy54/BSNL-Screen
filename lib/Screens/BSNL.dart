@@ -83,7 +83,9 @@ class BSNL extends StatelessWidget {
             child: Icon(icn)
           ),
         ),
-        Text(name, style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis, maxLines: 2,)
+        SizedBox(
+          width: 60,
+          child: Text(name, style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis, maxLines: 2,))
       ],
     );  
   }
@@ -127,7 +129,7 @@ class BSNL extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text("2", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold, color: Colors.orange),),
+                    Text("2", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold, color: Colors.orange, shadows: [Shadow(color: Colors.black, offset: Offset(2, 3 ))]),),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -219,9 +221,13 @@ class BSNL extends StatelessWidget {
                   Icon(Icons.warning_amber, color: Colors.red, size: 20,),
 
                   SizedBox(width: 2,),
-                  Text("Uh-Oh! Your plan has expired  Recharge now.", style: TextStyle(color: Colors.red, fontWeight: FontWeight.w600),),
+                  SizedBox(
+                    width: 260,
+                    child: Text("Uh-Oh! Your plan has expired  Recharge now.", overflow: TextOverflow.ellipsis, maxLines: 1, style: TextStyle(color: Colors.red, fontWeight: FontWeight.w600),)),
                   Spacer(),
-                  Text("Recharge", style: TextStyle(color: Colors.blue),),
+                  SizedBox(
+                    width: 80,
+                    child: Text("Recharge", overflow: TextOverflow.ellipsis, maxLines: 1,  style: TextStyle(color: Colors.blue),)),
               
                 ],
               ),
