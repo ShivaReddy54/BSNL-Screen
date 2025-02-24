@@ -153,8 +153,8 @@ class BSNL extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-          Colors.orange,
-          Colors.white
+          Color.fromARGB(249,163,80,255),
+          Color.fromARGB(252,223,193,255)
         ])  ,
         
       ),
