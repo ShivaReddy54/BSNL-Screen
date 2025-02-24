@@ -7,16 +7,13 @@ class BSNL extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListView(
-            children: [
-              Profile(),
-              Offer(),
-              SizedBox(height: 20,),
-              Quick_Actions()
-            ],
-          ),
+        body: ListView(
+          children: [
+            Profile(),
+            Offer(),
+            SizedBox(height: 20,),
+            Quick_Actions()
+          ],
         ),
       )
     );
@@ -24,24 +21,38 @@ class BSNL extends StatelessWidget {
 
   // Quick Actions
   Widget Quick_Actions(){
-    return IntrinsicHeight(
-      child: Container(
-        width: double.infinity,
-        height: 250,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: IntrinsicHeight(
+        child: Container(
+          width: double.infinity,
+          height: 250,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10)
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Quick Actions", style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.w800),),
+              
+              SizedBox(height: 20,),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Action_button()
+                  Action_button(Icons.receipt_long_sharp,"Recharge"),
+                  Action_button(Icons.blinds_closed_rounded,"Pay Bill"),
+                  Action_button(Icons.landscape_outlined,"Landline"),
+                  Action_button(Icons.broadcast_on_home_outlined,"Book Fiber"),
+                ],
+              ),
+              SizedBox(height: 30,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Action_button(Icons.receipt_long_sharp,"Upgrade to 4G Sim"),
+          
                 ],
               )
             ],
@@ -51,7 +62,7 @@ class BSNL extends StatelessWidget {
     );
   }
 
-  Widget Action_button(){
+  Widget Action_button(IconData icn, name){
     return Column(
 
       children: [
@@ -63,10 +74,10 @@ class BSNL extends StatelessWidget {
             borderRadius: BorderRadius.circular(30)
           ),
           child: Center(
-            child: Icon(Icons.receipt_long_sharp),
+            child: Icon(icn)
           ),
         ),
-        Text("Recharge", style: TextStyle(fontSize: 12),)
+        Text(name, style: TextStyle(fontSize: 12),)
       ],
     );
   }
@@ -74,55 +85,58 @@ class BSNL extends StatelessWidget {
  
   //Offer Widget
   Widget Offer(){
-    return IntrinsicHeight(
-      child: Container(
-        width: double.infinity,
-        height: 100,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Color.fromARGB(216,233,249,255)
-          // gradient: LinearGradient(
-          //   begin: Alignment.centerLeft,
-          //   end: Alignment.centerRight,
-          //   colors: [
-          //   const Color.fromARGB(255, 163, 204, 238),
-          //   Colors.white
-          // ])
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 8, bottom: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text("App Exclusive Offer", style: TextStyle(fontSize: 19, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.bold),),
-                  Text("Applicable on recharges above Rs.249.", style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
-                  SizedBox(height: 4,),
-                  Text("Check Now >>", style: TextStyle(fontSize: 15, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.bold)),
-                  SizedBox(height: 6,),
-                  Text("T&C apply", style: TextStyle(fontSize: 7),)
-                ],
-              ),
-              Row(
-                children: [
-                  Text("2", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold, color: Colors.orange),),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Get", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 2, 69, 123)),),
-                      SizedBox(height: 3,),
-                      Text("% OFF", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 2, 69, 123)),)
-                    ],
-                  )
-                ],
-              )
-            ],
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: IntrinsicHeight(
+        child: Container(
+          width: double.infinity,
+          height: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Color.fromARGB(216,233,249,255)
+            // gradient: LinearGradient(
+            //   begin: Alignment.centerLeft,
+            //   end: Alignment.centerRight,
+            //   colors: [
+            //   const Color.fromARGB(255, 163, 204, 238),
+            //   Colors.white
+            // ])
           ),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 8, bottom: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("App Exclusive Offer", style: TextStyle(fontSize: 19, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.bold),),
+                    Text("Applicable on recharges above Rs.249.", style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
+                    SizedBox(height: 4,),
+                    Text("Check Now >>", style: TextStyle(fontSize: 15, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.bold)),
+                    SizedBox(height: 6,),
+                    Text("T&C apply", style: TextStyle(fontSize: 7),)
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text("2", style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold, color: Colors.orange),),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Get", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 2, 69, 123)),),
+                        SizedBox(height: 3,),
+                        Text("% OFF", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 2, 69, 123)),)
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          
         ),
-        
       ),
     );
   }
