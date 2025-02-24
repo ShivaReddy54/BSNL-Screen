@@ -79,7 +79,7 @@ class BSNL extends StatelessWidget {
         ),
         Text(name, style: TextStyle(fontSize: 12),)
       ],
-    );
+    );  
   }
 
  
@@ -153,8 +153,8 @@ class BSNL extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-          Color.fromARGB(249,163,80,255),
-          Color.fromARGB(252,223,193,255)
+          Colors.orange,
+          Colors.white
         ])  ,
         
       ),
@@ -195,23 +195,25 @@ class BSNL extends StatelessWidget {
             width: double.infinity,
             height: 34,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                const Color.fromARGB(255, 245, 170, 165),
-                Colors.white
-              ]),
-              color: const Color.fromARGB(255, 245, 161, 155),
+              // gradient: LinearGradient(
+              //   begin: Alignment.centerLeft,
+              //   end: Alignment.centerRight,
+              //   colors: [
+              //   const Color.fromARGB(255, 245, 170, 165),
+              //   Colors.white
+              // ]),
+              color: const Color.fromARGB(255, 247, 217, 215),
+              // color: Color.fromARGB(253, 229, 227, 255),
               borderRadius: BorderRadius.circular(10)
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Icon(Icons.warning_amber),
+                  Icon(Icons.warning_amber, color: Colors.red, size: 20,),
+
                   SizedBox(width: 2,),
-                  Text("Uh-Oh! Your plan has expired  Recharge now.", style: TextStyle(color: Colors.red),),
+                  Text("Uh-Oh! Your plan has expired  Recharge now.", style: TextStyle(color: Colors.red, fontWeight: FontWeight.w600),),
                   Spacer(),
                   Text("Recharge", style: TextStyle(color: Colors.blue),),
               
