@@ -22,7 +22,7 @@ class BSNL extends StatelessWidget {
   // Quick Actions
   Widget Quick_Actions(){
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: IntrinsicHeight(
         child: Container(
           width: double.infinity,
@@ -35,7 +35,10 @@ class BSNL extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Quick Actions", style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.w800),),
+              Padding(
+                padding: const EdgeInsets.only(top: 10, left: 10),  
+                child: Text("Quick Actions", style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 2, 69, 123), fontWeight: FontWeight.w800),),
+              ),
               
               SizedBox(height: 20,),
               Row(
@@ -51,7 +54,10 @@ class BSNL extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Action_button(Icons.receipt_long_sharp,"Upgrade to 4G Sim"),
+                  Action_button(Icons.sim_card,"Upgrade to 4G Sim"),
+                  Action_button(Icons.nature_outlined,"Choose Your Number"),
+                  Action_button(Icons.do_not_disturb,"Do Not Disturb"),
+                  Action_button(Icons.games,"Games"),
           
                 ],
               )
@@ -77,7 +83,7 @@ class BSNL extends StatelessWidget {
             child: Icon(icn)
           ),
         ),
-        Text(name, style: TextStyle(fontSize: 12),)
+        Text(name, style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis, maxLines: 2,)
       ],
     );  
   }
