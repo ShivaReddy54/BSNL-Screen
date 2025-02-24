@@ -222,7 +222,7 @@ class BSNL extends StatelessWidget {
 
                   SizedBox(width: 2,),
                   SizedBox(
-                    width: 260,
+                    width: 220,
                     child: Text("Uh-Oh! Your plan has expired  Recharge now.", overflow: TextOverflow.ellipsis, maxLines: 1, style: TextStyle(color: Colors.red, fontWeight: FontWeight.w600),)),
                   Spacer(),
                   SizedBox(
